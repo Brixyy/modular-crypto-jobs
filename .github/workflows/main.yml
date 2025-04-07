@@ -1,0 +1,17 @@
+name: Fetch Categories
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Spustí se každou hodinu
+
+jobs:
+  fetch-categories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Call Supabase Edge Function
+        run: |
+          curl -X POST https://sbqjnvzrlmrlbsabidlt.supabase.co/functions/v1/fetch-categories \
+          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNicWpudnpybG1ybGJzYWJpZGx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM0OTY5MjgsImV4cCI6MjA1OTA3MjkyOH0.kC91Z3Q1bKLaVKRpEVcBZDsFDJHB7oMrwbfUrL2sW54"
