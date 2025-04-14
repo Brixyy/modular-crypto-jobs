@@ -1,2 +1,2 @@
-# modular-crypto-jobs
-Naplánované úlohy pro modulární centrum Crypto Hub
+# modular-crypto-hub-functions
+Funkce co poběží na vercel
